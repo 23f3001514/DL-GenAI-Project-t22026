@@ -1,72 +1,68 @@
 # Deep Learning & GenAI Project
-## MCQ Solver using Deep Learning & NLP
+## Smart MCQ Solver Challenge
 
----
-
-## Student Details
-- **Name:** ROHAN KUMAR
-- **Roll Number:** 23f3001514
-- **Term:** T2 2026
-- **Course:** Deep Learning & Generative AI (BS Data Science)
-- **Kaggle:** rohankumar1818
-- **W&B Project:** https://wandb.ai/23f3001514-instituition/23f3001514-t22026
+**Student:** Rohan Kumar  
+**Roll Number:** 23f3001514  
+**Term:** T2 2026  
+**Course:** Deep Learning & Generative AI (BS Data Science)  
+**Kaggle:** rohankumar1818  
+**W&B Project:** https://wandb.ai/23f3001514-instituition/23f3001514-t22026  
 
 ---
 
 ## Problem Statement
-Build ML/AI systems capable of solving complex multiple choice questions.
-Each question has 5 options (A-E). Task is to predict top 3 most likely
-correct answers ranked by confidence. Evaluated using MAP@3 metric.
+
+Build ML/AI systems capable of solving complex multiple choice questions.  
+Each question has 5 options (A to E). The task is to predict the **top 3 most likely correct answers** in ranked order.  
+Evaluation metric: **Mean Average Precision at 3 (mAP@3)**
+
+Higher score when correct answer appears earlier in predictions:
+- Correct answer at rank 1 → score = 1.000
+- Correct answer at rank 2 → score = 0.500  
+- Correct answer at rank 3 → score = 0.333
 
 ---
 
-## Models Built
-| Model | Type | Val Accuracy | Kaggle Score |
-|---|---|---|---|
-| Logistic Regression + TF-IDF | Classical ML | ~99% | 0.74064 |
-| TextCNN | From Scratch | 100% | 0.73815 |
-| TextCRNN (CNN+LSTM) | From Scratch | 99.5% | 0.75270 |
-| DistilBERT | Pretrained Transformer | 100% | 0.74688 |
+## Dataset
 
----
+| Split | Rows | Description |
+|---|---|---|
+| Train | 2000 | Questions with ground truth answers |
+| Test  | 500  | Questions to predict top 3 answers |
 
-## Best Kaggle Score: 0.75270 (CRNN Model)
+Each row has: `id`, `prompt`, `A`, `B`, `C`, `D`, `E`, `answer`
 
 ---
 
 ## Repository Structure
 
-- notebooks/ → Jupyter/Kaggle notebooks
-- src/ → Training and inference scripts
-- scripts/ → Utility scripts
-- data/ → Data samples or references
-- models/ → Saved model checkpoints
-- reports/ → Project report
-- requirements.txt
-- README.md
+```
+DL-GenAI-Project-t22026/
+├── notebooks/          → Jupyter/Kaggle notebooks
+├── src/                → Helper modules and utilities
+├── scripts/            → Training and inference scripts
+├── data/               → Data references (not actual data)
+├── models/             → Saved model checkpoints
+├── reports/            → Project report
+├── requirements.txt    → All dependencies
+└── README.md
+```
 
 ---
+
+
 
 ## Tools Used
-- **Kaggle** — Competition + inference
-- **GitHub** — Code + version control
-- **Weights & Biases** — Experiment tracking
-- **Hugging Face** — Pretrained models (DistilBERT)
+
+- **Kaggle** — Competition platform and GPU for training
+- **GitHub** — Version control and code hosting
+- **Weights & Biases** — Experiment tracking and visualization
+- **HuggingFace** — Pretrained transformer models
 - **PyTorch** — Deep learning framework
+- **scikit-learn** — Classical ML models
 
 ---
 
-## Milestones
-| Milestone | Status | Description |
-|---|---|---|
-| M0 | Done | Registration and Setup |
-| M1 | Done | EDA + Baseline |
-| M2 | Done | Classical ML |
-| M3 | Done | CNN from scratch |
-| M4 | Done | CRNN CNN+LSTM |
-| M5 | Done | DistilBERT Fine-tuning |
+## Progress
 
----
-
-## Setup Instructions
-Run pip install -r requirements.txt to install all dependencies.
+Work in progress — updating as project develops.
